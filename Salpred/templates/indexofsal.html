@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head><style>
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text], select, textarea {
+      width: 40%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+    
+    input[type=submit] {
+      background-color: #eb991f;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: center;
+      font-size:100%
+    }
+    
+    input[type=submit]:hover {
+      background-color: #2f2c34;
+    }
+    
+    .container {
+      border-radius: 5px;
+      background-color: #161515;
+      padding: 20px;
+    }
+    
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+    
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+    h1{
+  color: white;
+  font-size:350%;
+ font-family : Arial, Helvetica, sans-serif;
+}
+td{
+color:white;
+font-size:180%;
+font-family : Arial, Helvetica, sans-serif;
+}
+#grad1{
+  height: 565px;
+  background-color: rgb(60, 49, 105); /* For browsers that do not support gradients */
+  /* background-image: linear-gradient( #45b6fe,white); */
+}
+#p1{
+  color:white;
+}
+    </style></head>
+    <body id="grad1">
+
+        <center>
+         
+        <h1> SALARY ESTIMATOR </h1>  
+        <p id="p1"><a href='https://gist.github.com/asood0113/c77de5e7817fd3d322976caec439a7bf'style="color:white">View code of the model</a></p> 
+        <p id="p1"><a href='https://gist.github.com/asood0113/f0b0ab3270358137c4028962e3f0b8fa'style="color:white">View Dataset</a></p>      
+        <form method="POST", action="{{url_for('predict')}}">
+          <table>
+           <tr><td>  Experience :</td><td>  <input type="int", name='a'  required> </td></tr>
+            <tr><td>Test Score : </td><td><input type="int", name='b' required> </td></tr>
+              <tr><td>Interview Score : </td><td>  <input type="int", name='c' required> </td></tr>
+                                        
+            <br></table>
+            <br>
+           <input type="submit" , value='Predict' >
+           
+        </form>
+        
+        <br>
+        <br>
+        {{ prediction_text }}
+     
+      </div>
+        
+        
+    </center>
+
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>    h1{
+		font-size:280%;
+	   font-family : Arial, Helvetica, sans-serif;
+	  }</style>
+</head>
+<body bgcolor="#D3D3D3">
+		<center>
+	{% if prediction == 1%}
+	<h1 style="color:red;">The message is Spam</h1>
+	{% elif prediction == 0%}
+	<h1 style="color:blue;">The message is not Spam. It may be useful</h1>
+	{% endif %}
+
+	</div>
+</center>
+</body>
+</html>
